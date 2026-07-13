@@ -2,12 +2,23 @@ const nodemailer = require('nodemailer');
 
 // Initialize Nodemailer SMTP transporter
 const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT) || 587,
-    secure: false, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    socketTimeout: 30000
+});
+
+transporter.verify(function (error, success) {
+    if (error) {
+        console.error("SMTP Verify Error:", error);
+    } else {
+        console.log("SMTP Server Ready");
     }
 });
 
