@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-circle-notch fa-spin"></i>';
 
-                const API_BASE_URL = 'http://localhost:5000/api';
+                const API_BASE_URL = 'https://ieclate-innovate.onrender.com/api';
 
                 const payload = {
                     name: nameInput.value.trim(),
