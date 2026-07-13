@@ -7,7 +7,7 @@ const path = require('path');
 
 // Load environment variables
 dotenv.config();
-console.log("MONGO_URI =", process.env.MONGO_URI);
+console.log("Environment loaded", !!process.env.MONGO_URI);
 
 // Trigger Nodemon Environment Reload: Load updated Twilio settings
 const connectDB = require('./config/db');
@@ -21,7 +21,7 @@ const contactRoutes = require('./routes/contactRoutes');
 const Admin = require('./models/Admin');
 
 // Initialize database connection
-connectDB();
+
 
 const app = express();
 
@@ -38,15 +38,23 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-// Body parsers
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health Check API endpoint
-app.get('/api/health', (req, res) => {
+// Root Route
+app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
-        message: 'IECLATE INOVATE backend API is fully operational',
+        message: "IECLATE INOVATE Backend is Running 🚀",
+        health: "/api/health"
+    });
+});
+
+// Health Check API endpoint
+app.get("/api/health", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "IECLATE INOVATE backend API is fully operational",
         timestamp: new Date()
     });
 });
@@ -83,7 +91,7 @@ const seedAdminAccount = async () => {
 };
 
 // Execute Seeding on boot
-seedAdminAccount();
+
 
 // Serve Static Uploads folder if Multer is used
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -92,14 +100,41 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(errorHandler);
 
 // Server Booting Configuration
+// Server Booting Configuration
 const PORT = process.env.PORT || 5000;
-const server = app.listen(PORT, () => {
-    console.log(`[Server] IECLATE INOVATE backend active in ${process.env.NODE_ENV || 'production'} mode on port ${PORT}`);
-});
+let server;
+
+const startServer = async () => {
+    try {
+        // Connect to MongoDB
+        await connectDB();
+
+        // Seed default admin
+        await seedAdminAccount();
+
+        // Start Express server
+        server = app.listen(PORT, () => {
+            console.log(
+                `[Server] IECLATE INOVATE backend active in ${
+                    process.env.NODE_ENV || "production"
+                } mode on port ${PORT}`
+            );
+        });
+    } catch (error) {
+        console.error("[Startup Error]", error.message);
+        process.exit(1);
+    }
+};
+
+startServer();
 
 // Handle unhandled promise rejections globally
-process.on('unhandledRejection', (err, promise) => {
-    console.error(`[Server Error] Unhandled Rejection: ${err.message}`);
-    // Close server & exit process
-    server.close(() => process.exit(1));
+process.on("unhandledRejection", (err) => {
+    console.error("[Server Error] Unhandled Rejection:", err.message);
+
+    if (server) {
+        server.close(() => process.exit(1));
+    } else {
+        process.exit(1);
+    }
 });
