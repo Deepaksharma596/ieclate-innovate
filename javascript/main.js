@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // API Base URL Configuration
-    const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'https://ieclate-innovate.onrender.com/api';
 
     // 1. STICKY NAVBAR EFFECT
     const header = document.querySelector('.navbar-header');
