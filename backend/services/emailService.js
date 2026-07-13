@@ -67,7 +67,7 @@ const baseEmailTemplate = (title, bodyContent) => `
 const sendMail = async (to, subject, html) => {
     try {
         const info = await transporter.sendMail({
-            from: `"IECLATE INOVATE" <${process.env.EMAIL_USER}>`,
+            from: `"IECLATE INOVATE" <ieclateinnovate@gmail.com>`,
             to,
             subject,
             html
