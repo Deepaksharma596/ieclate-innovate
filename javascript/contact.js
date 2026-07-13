@@ -90,15 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 setError(messageInput);
             }
 
-            // Optional Phone Validation (if entered, verify length/characters)
-            if (phoneInput.value.trim() !== '') {
-                const phoneRegex = /^[+]?[0-9\s\-()]{7,20}$/;
-                if (!phoneRegex.test(phoneInput.value.trim())) {
-                    setError(phoneInput);
-                }
+            // Validate Phone (Required by Mongoose schema & route validator)
+            const phoneRegex = /^[+]?[0-9\s\-()]{7,20}$/;
+            if (phoneInput.value.trim() === '' || !phoneRegex.test(phoneInput.value.trim())) {
+                setError(phoneInput);
             }
 
-            // If Valid, simulate secure API transaction
+            // If Valid, dispatch real API transaction to the backend
             if (isValid) {
                 // Disable form submit to prevent double-submit during transaction
                 const submitBtn = contactForm.querySelector('.btn-submit');
@@ -106,22 +104,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-circle-notch fa-spin"></i>';
 
-                setTimeout(() => {
-                    // Success response feedback
-                    formMsgBox.classList.add('success');
-                    formMsgBox.innerText = 'Thank you! Your message has been sent successfully. Our team will contact you soon.';
-                    formMsgBox.style.display = 'block';
+                const API_BASE_URL = 'http://localhost:5000/api';
 
-                    // Reset form fields
-                    contactForm.reset();
+                const payload = {
+                    name: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    subject: subjectInput.value.trim(),
+                    message: messageInput.value.trim()
+                };
 
+                fetch(`${API_BASE_URL}/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => res.json())
+                .then(data => {
                     // Restore submit button
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
 
+                    if (data.success) {
+                        formMsgBox.classList.remove('error');
+                        formMsgBox.classList.add('success');
+                        formMsgBox.innerText = data.message || 'Thank you! Your message has been sent successfully. Our team will contact you soon.';
+                        formMsgBox.style.display = 'block';
+
+                        // Reset form fields
+                        contactForm.reset();
+                    } else {
+                        formMsgBox.classList.remove('success');
+                        formMsgBox.classList.add('error');
+                        if (data.errors && data.errors.length > 0) {
+                            formMsgBox.innerText = data.errors.map(err => err.msg).join(', ');
+                        } else {
+                            formMsgBox.innerText = data.message || 'Failed to send message. Please try again.';
+                        }
+                        formMsgBox.style.display = 'block';
+                    }
+
                     // Smooth scroll up to alert message
                     formMsgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 1500);
+                })
+                .catch(err => {
+                    // Restore submit button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+
+                    formMsgBox.classList.remove('success');
+                    formMsgBox.classList.add('error');
+                    formMsgBox.innerText = 'Connection error. Please check if your backend server is running and try again.';
+                    formMsgBox.style.display = 'block';
+
+                    formMsgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
             } else {
                 // Error response feedback
                 formMsgBox.classList.add('error');

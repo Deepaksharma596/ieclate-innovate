@@ -43,7 +43,7 @@ const baseEmailTemplate = (title, bodyContent) => `
         </div>
         <div class="footer">
             <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved.</p>
-            <p>101 Innovation Boulevard, Tech Park</p>
+            <p>Bhorki, Jhunjhunu, Rajasthan</p>
         </div>
     </div>
 </body>
