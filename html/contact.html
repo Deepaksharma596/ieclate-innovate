@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with IECLATE INOVATE. Submit a message, find our office locations, view business hours, or review our frequently asked questions.">
+    <title>Contact Us | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="contact-hero-section">
+        <div class="glow-orb orb-contact-1"></div>
+        <div class="container contact-hero-content">
+            <span class="sub-title">Get In Touch</span>
+            <h1>Let's Build Something <br><span class="text-gradient">Amazing Together</span></h1>
+            <p>Have a question or need a quote? Reach out to our solutions team for custom estimations and consultation on events, gifting, branding, or recruitment.</p>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT MAIN SECTION ================= -->
+    <section class="contact-main-section section-padding">
+        <div class="container contact-grid">
+
+            <!-- Contact Information Column -->
+            <div class="contact-info-column">
+                <div class="info-intro">
+                    <h2>Reach Out Directly</h2>
+                    <p>Whether you're planning a corporate event, designing custom gift packages, looking for high-quality printing, or launching a recruitment drive, we are here to support your needs.</p>
+                </div>
+
+                <div class="info-cards-list">
+                    <!-- Office Address -->
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Office Address</h3>
+                            <p>101 Innovation Boulevard, Tech Park, Suite 400, NY 10001</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Phone Number</h3>
+                            <p>+1 (800) 555-0199</p>
+                            <p>+1 (800) 555-0188</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Email Address</h3>
+                            <p>contact@ieclateinovate.com</p>
+                            <p>support@ieclateinovate.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            <p>Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Column -->
+            <div class="contact-form-column">
+                <div class="contact-form-card glass-card">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our corporate solutions advisors will get back to you within 24 business hours.</p>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <!-- Form Response Message -->
+                        <div id="form-message" class="form-message-box"></div>
+
+                        <div class="form-group-row">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="contact-name" placeholder="John Doe" required>
+                                </div>
+                                <span class="error-msg" id="name-error">Please enter your full name.</span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="contact-email" placeholder="john@example.com" required>
+                                </div>
+                                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="contact-phone" placeholder="+1 (555) 019-9999">
+                                </div>
+                                <span class="error-msg" id="phone-error">Please enter a valid phone number.</span>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <input type="text" id="contact-subject" placeholder="Project Estimation" required>
+                                </div>
+                                <span class="error-msg" id="subject-error">Please enter a subject.</span>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="contact-message">Your Message *</label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fa-solid fa-message"></i>
+                                <textarea id="contact-message" rows="5"
+                                    placeholder="Tell us about your service or project requirements..." required></textarea>
+                            </div>
+                            <span class="error-msg" id="message-error">Please type your message.</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= MAP SECTION ================= -->
+    <section class="map-section container">
+        <div class="map-wrapper glass-card">
+            <!-- Google Map Dark-Themed Placeholder -->
+            <div class="map-placeholder">
+                <div class="map-glow-dot"></div>
+                <div class="map-glow-ring"></div>
+                <div class="map-info-popup glass-card">
+                    <h4>IECLATE INOVATE HQ</h4>
+                    <p>101 Innovation Boulevard, NY</p>
+                    <a href="https://maps.google.com" target="_blank" class="map-link">Open in Maps <i
+                            class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+                <div class="map-overlay-text">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3>Google Maps Integration Active</h3>
+                    <p>Live GPS tracking mapping placeholder simulated for staging verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="faq-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Frequently Asked Questions</span>
+                <h2>Find Quick Answers</h2>
+                <p>Have questions about timelines, cloud setups, integrations, or billing structures?</p>
+            </div>
+
+            <div class="faq-accordion-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item glass-card">
+                    <button class="faq-question">
+                        <span>What services does IECLATE INOVATE specialize in?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We specialize in B2B corporate solutions, including end-to-end Event Services (launches, stall design), Gifting Services (employee welcome kits, hampers), Branding & Printing (acrylic signs, print media), and professional Recruitment Solutions (executive search, RPO).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item glass-card">
+                    <button class="faq-question">
+                        <span>How do we start a project estimation request?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can use our online Booking Form on the <a href="schedule-meeting.html"
+                                class="highlight">Schedule Meeting</a> page. Select a date, fill out your project
+                            outline, and our tech administrators will establish a Google Meet links session for you.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item glass-card">
+                    <button class="faq-question">
+                        <span>Do you offer post-launch support and security management?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. We offer service level agreement (SLA) contracts, 24/7 technical assistance, automatic
+                            database backups, periodic system security updates, and performance optimization monitoring.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item glass-card">
+                    <button class="faq-question">
+                        <span>Where is IECLATE INOVATE headquartered?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We are headquartered at 101 Innovation Boulevard, Tech Park, Suite 400, NY 10001. We
+                            coordinate with clients globally through secure virtual pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/contact.js"></script>
+</body>
+
+</html>

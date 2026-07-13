@@ -1,0 +1,427 @@
+/* ==========================================================================
+   IECLATE INOVATE ADMINISTRATOR LOGIN STYLES
+   ========================================================================== */
+
+/* ================= BASIC PORTAL RESET ================= */
+body {
+    background-color: #061121;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= ANIMATED PARTICLE BACKDROP ================= */
+.admin-particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 198, 255, 0.12) 0%, rgba(0, 198, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: adminFloatParticle infinite ease-in-out;
+}
+
+.p-1 { width: 150px; height: 150px; top: 10%; left: 5%; animation-duration: 22s; }
+.p-2 { width: 220px; height: 220px; top: 55%; left: 75%; animation-duration: 32s; animation-delay: -4s; }
+.p-3 { width: 110px; height: 110px; top: 80%; left: 15%; animation-duration: 18s; animation-delay: -9s; }
+.p-4 { width: 190px; height: 190px; top: 15%; left: 80%; animation-duration: 28s; animation-delay: -14s; }
+.p-5 { width: 130px; height: 130px; top: 40%; left: 40%; animation-duration: 25s; animation-delay: -2s; }
+.p-6 { width: 250px; height: 250px; top: 3%; left: 45%; animation-duration: 38s; animation-delay: -7s; }
+
+@keyframes adminFloatParticle {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-50px) translateX(40px) scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* ================= HEADER AND BRANDING ================= */
+.admin-login-header {
+    position: relative;
+    z-index: 10;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    background: rgba(6, 17, 33, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-web {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+
+.back-to-web:hover {
+    color: var(--white);
+    transform: translateX(-3px);
+}
+
+/* ================= VIEWPORT MAIN WORKSPACE ================= */
+.admin-login-viewport {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 15px;
+    z-index: 5;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+}
+
+.orb-admin-1 {
+    width: 350px;
+    height: 350px;
+    background: var(--primary);
+    top: 15%;
+    left: 20%;
+}
+
+.orb-admin-2 {
+    width: 350px;
+    height: 350px;
+    background: var(--secondary);
+    bottom: 15%;
+    right: 20%;
+}
+
+/* ================= SECURE ADMIN LOGIN CARD ================= */
+.admin-card-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+}
+
+.admin-card {
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.admin-card-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #FF5F56;
+    background: rgba(255, 95, 86, 0.08);
+    border: 1px solid rgba(255, 95, 86, 0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-card-header h2 {
+    font-size: 2.1rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.admin-card-header p {
+    font-size: 0.9rem;
+    color: var(--gray-muted);
+    line-height: 1.5;
+}
+
+/* ================= AUTH FORM CONTROLS ================= */
+.admin-auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.label-row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-forgot-pass {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.admin-forgot-pass:hover {
+    color: var(--white);
+}
+
+/* Input Fields */
+.admin-input-wrapper {
+    display: flex;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 2px 4px;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.admin-input-wrapper:focus-within {
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.18);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-input-wrapper i.fa-envelope-open-text, 
+.admin-input-wrapper i.fa-key {
+    color: var(--secondary);
+    align-self: center;
+    margin-left: 15px;
+    font-size: 0.95rem;
+}
+
+.admin-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    padding: 12px 15px;
+    font-size: 0.92rem;
+    flex-grow: 1;
+    font-family: inherit;
+}
+
+.btn-toggle-eye {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--gray-muted);
+    cursor: pointer;
+    padding: 0 10px;
+    align-self: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-toggle-eye:hover {
+    color: var(--secondary);
+}
+
+/* Remember Session Custom Checkbox */
+.admin-remember-row {
+    display: flex;
+    align-items: center;
+}
+
+.admin-checkbox-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--gray-muted);
+    user-select: none;
+}
+
+.admin-checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.admin-checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.admin-checkbox-label:hover input ~ .admin-checkmark {
+    border-color: var(--secondary);
+}
+
+.admin-checkbox-label input:checked ~ .admin-checkmark {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.admin-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.admin-checkbox-label input:checked ~ .admin-checkmark:after {
+    display: block;
+}
+
+.admin-checkbox-label .admin-checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Validation Message Styles */
+.admin-validation-error {
+    font-size: 0.75rem;
+    color: #FF5F56;
+    display: none;
+    margin-top: 4px;
+}
+
+.admin-validation-error.show {
+    display: block;
+}
+
+.admin-error-summary {
+    background: rgba(255, 95, 86, 0.05);
+    border: 1px solid rgba(255, 95, 86, 0.2);
+    color: #FF5F56;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-error-summary.show {
+    display: flex;
+}
+
+/* Submit Action Button */
+.btn-admin-submit {
+    width: 100%;
+    margin-top: 10px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.btn-admin-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ================= TOAST NOTIFICATION STYLES ================= */
+.admin-toast-notification {
+    position: fixed;
+    bottom: -80px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(6, 17, 33, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-premium);
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.admin-toast-notification.show {
+    bottom: 40px;
+}
+
+.toast-icon {
+    font-size: 1.35rem;
+    color: var(--secondary);
+}
+
+.toast-message {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+/* ================= BRAND FOOTER ================= */
+.admin-login-footer {
+    position: relative;
+    z-index: 10;
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    background: rgba(6, 17, 33, 0.4);
+}
+
+.admin-login-footer p {
+    font-size: 0.78rem;
+    color: var(--gray-muted);
+}
+
+/* ================= RESPONSIVE LAYOUTS ================= */
+@media (max-width: 768px) {
+    .admin-card {
+        padding: 30px 20px;
+    }
+    
+    .admin-card-header h2 {
+        font-size: 1.8rem;
+    }
+}

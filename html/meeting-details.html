@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Meeting Details administration portal for IECLATE INOVATE. Manage and review client meetings, approve sessions, or send confirmation emails.">
+    <title>Meeting Details Console | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meeting.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= ADMIN HERO ================= -->
+    <section class="meeting-hero-section">
+        <div class="glow-orb orb-meeting-1"></div>
+        <div class="container meeting-hero-content">
+            <span class="sub-title">Admin Console</span>
+            <h1>Manage Meeting <br><span class="text-gradient">Request Details</span></h1>
+            <p>Review the submitted client metadata, confirm dates, copy virtual session links, and update session statuses.</p>
+        </div>
+    </section>
+
+    <!-- ================= MAIN ADMIN CONSOLE SECTION ================= -->
+    <section class="meeting-console-section section-padding">
+        <div class="container meeting-console-grid">
+            
+            <!-- Left Side: Client profile card -->
+            <div class="client-details-column">
+                <div class="client-card glass-card">
+                    <div class="client-avatar-wrapper">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="client-name-details">
+                        <h2>Alexander Wright</h2>
+                        <span class="client-title">Procurement Director</span>
+                        <span class="client-company-tag"><i class="fa-solid fa-building"></i> Vertex Industries Ltd</span>
+                    </div>
+                    <hr class="card-divider">
+                    <div class="client-contacts-list">
+                        <div class="contact-item">
+                            <span class="label">Email Address</span>
+                            <span class="val"><i class="fa-solid fa-envelope"></i> alex.wright@vertex.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="label">Phone Number</span>
+                            <span class="val"><i class="fa-solid fa-phone"></i> +1 (800) 555-0142</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="label">Location</span>
+                            <span class="val"><i class="fa-solid fa-location-dot"></i> Chicago, IL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Meeting Details card -->
+            <div class="meeting-details-column">
+                <div class="details-card glass-card">
+                    <div class="card-header-flex">
+                        <h3>Meeting Parameters</h3>
+                        <span class="status-badge pending" id="meeting-status">Pending Review</span>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="details-field">
+                            <span class="field-label"><i class="fa-solid fa-calendar-days text-gradient"></i> Meeting Date</span>
+                            <span class="field-value">July 15, 2026</span>
+                        </div>
+                        <div class="details-field">
+                            <span class="field-label"><i class="fa-solid fa-clock text-gradient"></i> Meeting Time</span>
+                            <span class="field-value">11:00 AM - 11:45 AM EST</span>
+                        </div>
+                    </div>
+
+                    <div class="purpose-block">
+                        <span class="field-label"><i class="fa-solid fa-circle-question text-gradient"></i> Purpose of Meeting</span>
+                        <p class="field-value-text">Discussing customized B2B employee welcome kits, festival dry fruit hampers, and high-quality vinyl backdrop printing designs for our upcoming headquarter launch campaigns.</p>
+                    </div>
+
+                    <div class="link-block">
+                        <span class="field-label"><i class="fa-solid fa-video text-gradient"></i> Meeting Link</span>
+                        <div class="link-input-wrapper">
+                            <input type="text" value="https://meet.google.com/abc-defg-hij" id="meeting-link-url" readonly>
+                            <button id="btn-copy-link" aria-label="Copy meeting link"><i class="fa-solid fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <hr class="card-divider">
+
+                    <!-- Administrative Dashboard Controls -->
+                    <div class="console-actions-panel">
+                        <div class="actions-buttons-row">
+                            <button class="btn-console btn-approve" id="btn-approve">
+                                <i class="fa-solid fa-circle-check"></i> Approve
+                            </button>
+                            <button class="btn-console btn-reject" id="btn-reject">
+                                <i class="fa-solid fa-circle-xmark"></i> Reject
+                            </button>
+                            <button class="btn-console btn-email" id="btn-send-email">
+                                <i class="fa-solid fa-paper-plane"></i> Send Email
+                            </button>
+                        </div>
+                        <a href="index.html" class="btn-console btn-back">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Popup Toast Notifications -->
+    <div class="admin-toast-notification" id="admin-toast">
+        <i class="fa-solid fa-circle-info toast-icon" id="toast-icon"></i>
+        <span class="toast-message" id="toast-message">Notification Triggered</span>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

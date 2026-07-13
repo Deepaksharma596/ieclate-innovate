@@ -1,0 +1,273 @@
+/* ==========================================================================
+   IECLATE INOVATE AUTHENTICATION PAGES SPECIFIC STYLES
+   ========================================================================== */
+
+/* ================= AUTH VIEWPORT CONTAINER ================= */
+.auth-viewport-section {
+    position: relative;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 0 100px 0;
+    overflow: hidden;
+}
+
+.auth-form-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.auth-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.orb-auth-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: 10%;
+    left: -5%;
+}
+
+.orb-auth-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--secondary);
+    bottom: 10%;
+    right: -5%;
+}
+
+/* ================= AUTH CARD HEADER ================= */
+.auth-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-header h2 {
+    font-size: 2rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.auth-header p {
+    font-size: 0.92rem;
+    color: var(--gray-muted);
+}
+
+/* ================= AUTHENTICATION FORM ================= */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.auth-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.forgot-link:hover {
+    color: var(--white);
+}
+
+/* Input Fields Container */
+.auth-input-wrapper {
+    display: flex;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 2px 4px;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.auth-input-wrapper:focus-within {
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.15);
+}
+
+.auth-input-wrapper i.fa-user, 
+.auth-input-wrapper i.fa-lock,
+.auth-input-wrapper i.fa-lock-open,
+.auth-input-wrapper i.fa-signature,
+.auth-input-wrapper i.fa-envelope {
+    color: var(--secondary);
+    align-self: center;
+    margin-left: 15px;
+    font-size: 0.95rem;
+}
+
+.auth-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    padding: 12px 15px;
+    font-size: 0.92rem;
+    flex-grow: 1;
+    font-family: inherit;
+}
+
+.btn-toggle-pass {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--gray-muted);
+    cursor: pointer;
+    padding: 0 10px;
+    align-self: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-toggle-pass:hover {
+    color: var(--secondary);
+}
+
+/* Custom Checkbox Design */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--gray-muted);
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--secondary);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Validation Message Styles */
+.auth-error-text {
+    font-size: 0.75rem;
+    color: #FF5F56;
+    display: none;
+    margin-top: 4px;
+}
+
+.auth-error-text.show {
+    display: block;
+}
+
+.auth-error-message-box {
+    background: rgba(255, 95, 86, 0.06);
+    border: 1px solid rgba(255, 95, 86, 0.25);
+    color: #FF5F56;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-error-message-box.show {
+    display: flex;
+}
+
+/* Submit Actions */
+.btn-auth-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-footer-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray-muted);
+    margin-top: 10px;
+}
+
+.auth-footer-link a {
+    font-weight: 600;
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+    .auth-viewport-section {
+        padding: 140px 10px 80px 10px;
+    }
+    
+    .auth-card {
+        padding: 30px 20px;
+    }
+}

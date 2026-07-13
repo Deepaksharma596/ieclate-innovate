@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Administrator portal login for IECLATE INOVATE. Secure gateway for management operations.">
+    <title>Admin Portal Login | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin-login.css">
+</head>
+
+<body>
+
+    <!-- Animated Floating Particle Nodes -->
+    <div class="admin-particles-container">
+        <div class="particle p-1"></div>
+        <div class="particle p-2"></div>
+        <div class="particle p-3"></div>
+        <div class="particle p-4"></div>
+        <div class="particle p-5"></div>
+        <div class="particle p-6"></div>
+    </div>
+
+    <!-- Minimalist Brand Header -->
+    <header class="admin-login-header">
+        <div class="admin-nav container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+            <a href="index.html" class="back-to-web"><i class="fa-solid fa-arrow-left-long"></i> Back to Website</a>
+        </div>
+    </header>
+
+    <!-- Admin Login Main Content -->
+    <main class="admin-login-viewport">
+        <div class="glow-orb orb-admin-1"></div>
+        <div class="glow-orb orb-admin-2"></div>
+        
+        <div class="admin-card-wrapper">
+            <div class="admin-card glass-card">
+                <div class="admin-card-header">
+                    <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Security Portal</div>
+                    <h2>Admin Console</h2>
+                    <p>Enter your administrator credentials to access the console database.</p>
+                </div>
+
+                <form id="admin-login-form" class="admin-auth-form" novalidate>
+                    <!-- Errors placeholder -->
+                    <div id="admin-error-box" class="admin-error-summary"></div>
+
+                    <!-- Phase 1: Email & Password Form Fields -->
+                    <div class="auth-fields-step" id="auth-credentials-fields">
+                        <!-- Email -->
+                        <div class="admin-form-group">
+                            <label for="admin-email">Administrator Email *</label>
+                            <div class="admin-input-wrapper">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                                <input type="email" id="admin-email" placeholder="admin@ieclateinovate.com" required>
+                            </div>
+                            <span class="admin-validation-error" id="admin-email-err">Please enter a valid administrator email.</span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="admin-form-group" style="margin-top: 15px;">
+                            <div class="label-row-flex">
+                                <label for="admin-pass">Password *</label>
+                                <a href="#" class="admin-forgot-pass">Forgot Password?</a>
+                            </div>
+                            <div class="admin-input-wrapper">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="admin-pass" placeholder="••••••••" required>
+                                <button type="button" class="btn-toggle-eye" id="btn-toggle-admin-eye" aria-label="Toggle password visibility">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="admin-validation-error" id="admin-pass-err">Please enter your security password.</span>
+                        </div>
+
+                        <!-- Registered Mobile Number -->
+                        <div class="admin-form-group" style="margin-top: 15px;">
+                            <label for="admin-mobile">Registered Mobile Number *</label>
+                            <div class="admin-input-wrapper">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <input type="tel" id="admin-mobile" placeholder="+18777804236" required>
+                            </div>
+                            <span class="admin-validation-error" id="admin-mobile-err">Please enter your registered mobile number.</span>
+                        </div>
+
+                        <!-- Action items -->
+                        <div class="admin-remember-row" style="margin-top: 15px;">
+                            <label class="admin-checkbox-label">
+                                <input type="checkbox" id="admin-remember">
+                                <span class="admin-checkmark"></span>
+                                Remember Session
+                            </label>
+                        </div>
+
+                        <!-- Submit action -->
+                        <button type="submit" class="btn btn-primary btn-admin-submit" style="margin-top: 20px;">
+                            Secure Login <i class="fa-solid fa-lock"></i>
+                        </button>
+                    </div>
+
+                    <!-- Phase 2: Mobile OTP Verification Code Prompt -->
+                    <div class="auth-fields-step" id="auth-otp-fields" style="display: none;">
+                        <div class="admin-form-group">
+                            <label for="admin-otp">6-Digit Verification Code *</label>
+                            <div class="otp-notice" style="font-size: 0.82rem; color: var(--gray-muted); margin-bottom: 10px; line-height: 1.4;">
+                                <i class="fa-solid fa-circle-info text-gradient"></i> Verification code sent to mobile number: <span class="highlight" style="font-weight: 600;" id="otp-mobile-display">+1 (***) ***-0199</span>.
+                            </div>
+                            <div class="admin-input-wrapper">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <input type="text" id="admin-otp" placeholder="••••••" maxlength="6" required>
+                            </div>
+                            <span class="admin-validation-error" id="admin-otp-err">Please enter the valid 6-digit code.</span>
+                        </div>
+
+                        <div class="otp-resend-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                            <span style="font-size: 0.8rem; color: var(--gray-muted);">Didn't receive code?</span>
+                            <a href="#" class="admin-forgot-pass" id="btn-resend-otp">Resend OTP</a>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-admin-submit" id="btn-verify-otp" style="margin-top: 20px;">
+                            Verify Code & Login <i class="fa-solid fa-shield-check"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Administrative Toast alerts -->
+    <div class="admin-toast-notification" id="admin-toast">
+        <i class="fa-solid fa-circle-info toast-icon" id="toast-icon"></i>
+        <span class="toast-message" id="toast-message">Admin Portal Alert</span>
+    </div>
+
+    <!-- Minimalist Footer -->
+    <footer class="admin-login-footer">
+        <p>&copy; 2026 IECLATE INOVATE. Authorized Personnel Only. System activity is logged and monitored.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

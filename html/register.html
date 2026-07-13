@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Register for an IECLATE INOVATE account. Seamlessly connect with B2B corporate events, gifting packages, printing layouts, and staffing modules.">
+    <title>Register | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary active">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta active">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= AUTH CONTAINER ================= -->
+    <section class="auth-viewport-section">
+        <div class="glow-orb orb-auth-1"></div>
+        <div class="glow-orb orb-auth-2"></div>
+        
+        <div class="container auth-form-container">
+            <div class="auth-card glass-card">
+                <div class="auth-header">
+                    <h2>Create Account</h2>
+                    <p>Start managing your corporate projects and requirements today.</p>
+                </div>
+
+                <form id="register-form" class="auth-form" novalidate>
+                    <!-- Error Box -->
+                    <div id="auth-error-box" class="auth-error-message-box"></div>
+
+                    <!-- Full Name -->
+                    <div class="auth-group">
+                        <label for="register-name">Full Name *</label>
+                        <div class="auth-input-wrapper">
+                            <i class="fa-solid fa-signature"></i>
+                            <input type="text" id="register-name" placeholder="John Doe" required>
+                        </div>
+                        <span class="auth-error-text" id="name-error">Please enter your full name.</span>
+                    </div>
+
+                    <!-- Email/Username -->
+                    <div class="auth-group">
+                        <label for="register-email">Email Address *</label>
+                        <div class="auth-input-wrapper" style="padding-right: 4px;">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="register-email" placeholder="john.doe@example.com" required>
+                            <button type="button" class="btn btn-secondary" id="btn-send-email-otp" style="padding: 6px 14px; font-size: 0.78rem; border-radius: 6px; flex-shrink: 0; align-self: center; margin-right: 4px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.15);">Verify</button>
+                            <span id="email-verified-badge" style="display: none; color: #27C93F; align-self: center; margin-right: 12px; font-size: 0.85rem; font-weight: 600; gap: 6px; align-items: center;"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <span class="auth-error-text" id="email-error">Please enter a valid email address.</span>
+                    </div>
+
+                    <!-- Email OTP Code Verification (hidden initially) -->
+                    <div class="auth-group" id="email-otp-group" style="display: none; margin-top: -10px; background: rgba(255,255,255,0.01); border: 1px dashed rgba(255,255,255,0.08); padding: 15px; border-radius: 8px;">
+                        <label for="register-email-otp" style="font-size: 0.75rem;">Enter Verification Code *</label>
+                        <div class="otp-instruction" style="font-size: 0.78rem; color: var(--gray-muted); margin-bottom: 8px;">OTP code has been sent. Please try: <span class="highlight" style="font-weight:600;">9876</span></div>
+                        <div class="auth-input-wrapper" style="padding-right: 4px;">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <input type="text" id="register-email-otp" placeholder="9876" maxlength="4">
+                            <button type="button" class="btn btn-primary" id="btn-confirm-email-otp" style="padding: 6px 14px; font-size: 0.78rem; border-radius: 6px; flex-shrink: 0; align-self: center; margin-right: 4px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">Confirm</button>
+                        </div>
+                        <span class="auth-error-text" id="email-otp-error">Invalid verification code. Please enter 9876.</span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="auth-group">
+                        <label for="register-pass">Password *</label>
+                        <div class="auth-input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="register-pass" placeholder="••••••••" required>
+                            <button type="button" class="btn-toggle-pass" id="btn-toggle-pass-1" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="auth-error-text" id="pass-error">Password must be at least 8 characters.</span>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="auth-group">
+                        <label for="register-confirm-pass">Confirm Password *</label>
+                        <div class="auth-input-wrapper">
+                            <i class="fa-solid fa-lock-open"></i>
+                            <input type="password" id="register-confirm-pass" placeholder="••••••••" required>
+                            <button type="button" class="btn-toggle-pass" id="btn-toggle-pass-2" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="auth-error-text" id="confirm-pass-error">Passwords do not match.</span>
+                    </div>
+
+                    <!-- Terms checkbox -->
+                    <div class="auth-action-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="register-terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="highlight">Terms & Conditions</a>
+                        </label>
+                        <span class="auth-error-text" id="terms-error">You must accept the Terms.</span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-auth-submit">
+                        Register <i class="fa-solid fa-user-plus"></i>
+                    </button>
+
+                    <!-- Alt Action link -->
+                    <div class="auth-footer-link">
+                        Already registered? <a href="login.html" class="highlight">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administrative Toast notification -->
+    <div class="admin-toast-notification" id="admin-toast">
+        <i class="fa-solid fa-circle-info toast-icon" id="toast-icon"></i>
+        <span class="toast-message" id="toast-message">Notification Message</span>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

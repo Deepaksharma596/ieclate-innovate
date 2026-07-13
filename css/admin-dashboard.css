@@ -1,0 +1,305 @@
+/* ==========================================================================
+   IECLATE INOVATE ADMINISTRATOR DASHBOARD STYLES
+   ========================================================================== */
+
+/* ================= DASHBOARD HERO ================= */
+.dashboard-hero-section {
+    position: relative;
+    padding: 160px 0 60px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.dashboard-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashboard-hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+}
+
+.dashboard-hero-content p {
+    font-size: 1.12rem;
+    max-width: 650px;
+}
+
+.orb-dash-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--primary);
+    top: -10%;
+    right: 25%;
+}
+
+/* ================= METRICS GRID ================= */
+.metrics-panel-section {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 20px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.metric-card {
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition-smooth);
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--secondary);
+}
+
+.metric-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Color themed glow markers */
+.blue-glow {
+    background: rgba(0, 198, 255, 0.08);
+    border: 1px solid rgba(0, 198, 255, 0.2);
+    color: var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.1);
+}
+
+.green-glow {
+    background: rgba(39, 201, 63, 0.08);
+    border: 1px solid rgba(39, 201, 63, 0.2);
+    color: #27C93F;
+    box-shadow: 0 0 15px rgba(39, 201, 63, 0.1);
+}
+
+.amber-glow {
+    background: rgba(255, 189, 46, 0.08);
+    border: 1px solid rgba(255, 189, 46, 0.2);
+    color: #FFBD2E;
+    box-shadow: 0 0 15px rgba(255, 189, 46, 0.1);
+}
+
+.red-glow {
+    background: rgba(255, 95, 86, 0.08);
+    border: 1px solid rgba(255, 95, 86, 0.2);
+    color: #FF5F56;
+    box-shadow: 0 0 15px rgba(255, 95, 86, 0.1);
+}
+
+.metric-details h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.metric-details p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gray-muted);
+}
+
+/* ================= BOOKINGS TABLE BOARD ================= */
+.board-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.board-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+}
+
+.header-left h3 {
+    font-size: 1.45rem;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.header-left p {
+    font-size: 0.88rem;
+    color: var(--gray-muted);
+}
+
+.btn-refresh-table {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Scrollable Responsive wrapper */
+.table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+}
+
+.bookings-table th {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.01);
+    color: var(--gray-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bookings-table td {
+    padding: 18px 15px;
+    font-size: 0.9rem;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+}
+
+.bookings-table tr {
+    transition: var(--transition-smooth);
+}
+
+.bookings-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+/* Client profile cell */
+.client-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.client-name {
+    font-weight: 600;
+    color: var(--white);
+    display: block;
+}
+
+.client-role {
+    font-size: 0.75rem;
+    color: var(--gray-muted);
+    display: block;
+}
+
+/* Inline badges */
+.status-badge-inline {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.status-pending {
+    border: 1px solid #FFBD2E;
+    color: #FFBD2E;
+    background: rgba(255, 189, 46, 0.04);
+}
+
+.status-approved {
+    border: 1px solid #27C93F;
+    color: #27C93F;
+    background: rgba(39, 201, 63, 0.04);
+}
+
+.status-rejected {
+    border: 1px solid #FF5F56;
+    color: #FF5F56;
+    background: rgba(255, 95, 86, 0.04);
+}
+
+.btn-details-link {
+    background: rgba(0, 198, 255, 0.06);
+    border: 1px solid rgba(0, 198, 255, 0.2);
+    color: var(--secondary);
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-smooth);
+}
+
+.btn-details-link:hover {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow);
+    transform: translateX(2px);
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 1024px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .board-card {
+        padding: 30px 20px;
+    }
+}

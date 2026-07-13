@@ -1,0 +1,454 @@
+/* ==========================================================================
+   IECLATE INOVATE MEETING DETAILS CONSOLE STYLES
+   ========================================================================== */
+
+/* ================= MEETING HERO ================= */
+.meeting-hero-section {
+    position: relative;
+    padding: 180px 0 80px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.meeting-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.meeting-hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+}
+
+.meeting-hero-content p {
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+.orb-meeting-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--primary);
+    top: -10%;
+    left: 10%;
+}
+
+/* ================= MEETING CONSOLE LAYOUT ================= */
+.meeting-console-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    position: relative;
+    z-index: 5;
+    align-items: start;
+}
+
+.card-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* ================= CLIENT CARD (LEFT) ================= */
+.client-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.client-avatar-wrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(0, 198, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: var(--transition-smooth);
+}
+
+.client-card:hover .client-avatar-wrapper {
+    transform: scale(1.05);
+    border-color: var(--secondary);
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.35);
+}
+
+.client-avatar-wrapper i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.client-name-details h2 {
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.client-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-muted);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.client-company-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary);
+    background: rgba(0, 198, 255, 0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.client-contacts-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-item .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-muted);
+}
+
+.contact-item .val {
+    font-size: 0.95rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-item .val i {
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+/* ================= MEETING DETAILS CARD (RIGHT) ================= */
+.details-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+}
+
+.card-header-flex h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+/* Status Badges */
+.status-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.status-badge.pending {
+    border: 1px solid #FFBD2E;
+    color: #FFBD2E;
+    background: rgba(255, 189, 46, 0.05);
+    box-shadow: 0 0 15px rgba(255, 189, 46, 0.15);
+}
+
+.status-badge.approved {
+    border: 1px solid #27C93F;
+    color: #27C93F;
+    background: rgba(39, 201, 63, 0.05);
+    box-shadow: 0 0 15px rgba(39, 201, 63, 0.2);
+}
+
+.status-badge.rejected {
+    border: 1px solid #FF5F56;
+    color: #FF5F56;
+    background: rgba(255, 95, 86, 0.05);
+    box-shadow: 0 0 15px rgba(255, 95, 86, 0.2);
+}
+
+/* Details fields grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.details-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.field-label i {
+    font-size: 0.9rem;
+}
+
+.details-field .field-value {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.purpose-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.purpose-block .field-value-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-muted);
+}
+
+.link-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Link Copy Widget */
+.link-input-wrapper {
+    display: flex;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 4px;
+    width: 100%;
+}
+
+.link-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    font-family: inherit;
+}
+
+.link-input-wrapper button {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--secondary);
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.link-input-wrapper button:hover {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow);
+}
+
+/* ================= ADMINISTRATIVE ACTIONS PANEL ================= */
+.console-actions-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.actions-buttons-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.btn-console {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    font-family: inherit;
+}
+
+.btn-approve {
+    background: rgba(39, 201, 63, 0.06);
+    border: 1px solid rgba(39, 201, 63, 0.25);
+    color: #27C93F;
+}
+
+.btn-approve:hover {
+    background: #27C93F;
+    color: var(--white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(39, 201, 63, 0.35);
+}
+
+.btn-reject {
+    background: rgba(255, 95, 86, 0.06);
+    border: 1px solid rgba(255, 95, 86, 0.25);
+    color: #FF5F56;
+}
+
+.btn-reject:hover {
+    background: #FF5F56;
+    color: var(--white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 95, 86, 0.35);
+}
+
+.btn-email {
+    background: rgba(21, 101, 255, 0.06);
+    border: 1px solid rgba(21, 101, 255, 0.25);
+    color: var(--primary);
+}
+
+.btn-email:hover {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    width: 100%;
+}
+
+.btn-back:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================= TOAST NOTIFICATION CONTAINER ================= */
+.admin-toast-notification {
+    position: fixed;
+    bottom: -80px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(8, 27, 58, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-premium);
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.admin-toast-notification.show {
+    bottom: 40px;
+}
+
+.toast-icon {
+    font-size: 1.3rem;
+    color: var(--secondary);
+}
+
+.toast-message {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 1024px) {
+    .meeting-console-grid {
+        grid-template-columns: 1.2fr 1.8fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .meeting-hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .meeting-console-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .details-card {
+        padding: 30px 20px;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .actions-buttons-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

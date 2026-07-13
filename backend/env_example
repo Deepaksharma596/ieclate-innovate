@@ -1,0 +1,26 @@
+# Server Port configuration
+PORT=5000
+NODE_ENV=development
+
+# Database connection
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/ieclate_inovate?retryWrites=true&w=majority
+
+# JWT Configurations
+JWT_SECRET=your_jwt_super_secret_key_123456
+JWT_EXPIRE=7d
+
+# Twilio SMS Credentials (OTP verification)
+TWILIO_ACCOUNT_SID=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_PHONE_NUMBER=+15017122661
+
+# Nodemailer configuration (Responsive HTML Email Dispatches)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=your_email_user@gmail.com
+EMAIL_PASS=your_gmail_app_password_here
+
+# Cloudinary credentials (custom banner and image uploads)
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret

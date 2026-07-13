@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="View the corporate portfolio and client success stories of IECLATE INOVATE. Explore our premium event coordination, gifting kits, branding displays, and recruitment campaigns.">
+    <title>Our Portfolio | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= PORTFOLIO HERO ================= -->
+    <section class="portfolio-hero-section">
+        <div class="glow-orb orb-portfolio-1"></div>
+        <div class="container portfolio-hero-content">
+            <span class="sub-title">Our Work</span>
+            <h1>Showcase of B2B <br><span class="text-gradient">Corporate Excellence</span></h1>
+            <p>Explore our recent campaigns, custom product rollouts, high-end gift kits, and corporate staffing achievements built for global industry leaders.</p>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO MAIN SECTION ================= -->
+    <section class="portfolio-main-section section-padding">
+        <div class="container">
+            
+            <!-- Category Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="events">Event Services</button>
+                <button class="filter-btn" data-filter="gifting">Gifting Services</button>
+                <button class="filter-btn" data-filter="branding">Branding & Printing</button>
+                <button class="filter-btn" data-filter="recruitment">Recruitment</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="project-grid-container" id="project-grid">
+                
+                <!-- Card 1: Events -->
+                <div class="project-portfolio-card glass-card" data-category="events">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #1565FF 0%, #081B3A 100%);">
+                            <i class="fa-solid fa-users-viewfinder project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_event.png" alt="Mega Corp Annual Summit" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Events</span>
+                        <h3>Mega Corp Annual Summit</h3>
+                        <p>Complete end-to-end planning, staging production, and custom exhibition stall fabrication for a 3-day corporate conference.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Stall Design</span>
+                            <span class="tech-tag">AV Setup</span>
+                            <span class="tech-tag">Catering</span>
+                            <span class="tech-tag">Host Management</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="mega-corp">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Gifting -->
+                <div class="project-portfolio-card glass-card" data-category="gifting">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #00C6FF 0%, #0B224C 100%);">
+                            <i class="fa-solid fa-boxes-packing project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_gifting.png" alt="Executive Welcome Kits Curation" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Gifting</span>
+                        <h3>Executive Welcome Kits Curation</h3>
+                        <p>Custom packaging design, product catalog curation, and distribution of 2,000+ employee onboarding welcome packs.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Logo Engraving</span>
+                            <span class="tech-tag">Packaging Design</span>
+                            <span class="tech-tag">Logistics</span>
+                            <span class="tech-tag">Apparel Print</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="welcome-kits">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Branding -->
+                <div class="project-portfolio-card glass-card" data-category="branding">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #1565FF 0%, #00C6FF 100%);">
+                            <i class="fa-solid fa-compass-drafting project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_branding.png" alt="Storefront Branding Signages" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Branding</span>
+                        <h3>Storefront Branding Signages</h3>
+                        <p>High-resolution flex banner printing, foam board display mounts, and acrylic glow sign installation across 15 store locations.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Acrylic Glow</span>
+                            <span class="tech-tag">Vinyl Print</span>
+                            <span class="tech-tag">Flex Banner</span>
+                            <span class="tech-tag">CNC Router</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="storefront-branding">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Recruitment -->
+                <div class="project-portfolio-card glass-card" data-category="recruitment">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #0C234E 0%, #061633 100%);">
+                            <i class="fa-solid fa-user-check project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_recruitment.jpg" alt="Tech Talent Acquisition Drive" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Recruitment</span>
+                        <h3>Tech Talent Acquisition Drive</h3>
+                        <p>Sourcing, screening, and placement campaign of 150+ senior software engineers and team leaders for a financial partner.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Executive Search</span>
+                            <span class="tech-tag">IT Recruitment</span>
+                            <span class="tech-tag">RPO</span>
+                            <span class="tech-tag">HR Compliance</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="talent-drive">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Events -->
+                <div class="project-portfolio-card glass-card" data-category="events">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #0B224C 0%, #1565FF 100%);">
+                            <i class="fa-solid fa-handshake project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_launch.jpg" alt="Auto Launch Distributor Meet" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Events</span>
+                        <h3>Auto Launch Distributor Meet</h3>
+                        <p>Planning and logistics hosting for a dealer meet and new electric vehicle reveal event involving 300+ distributors.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Distributor Meet</span>
+                            <span class="tech-tag">Product Reveal</span>
+                            <span class="tech-tag">Stage Backdrop</span>
+                            <span class="tech-tag">Light & Sound</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="auto-launch">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Gifting -->
+                <div class="project-portfolio-card glass-card" data-category="gifting">
+                    <div class="project-image-wrapper">
+                        <div class="project-fallback-gradient" style="background: linear-gradient(135deg, #00C6FF 0%, #1565FF 100%);">
+                            <i class="fa-solid fa-seedling project-dummy-icon"></i>
+                        </div>
+                        <img src="../images/placeholder_festival.jpg" alt="Eco-Friendly Festival Gift Packs" class="project-image" onerror="this.style.display='none';">
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-card-tag">Gifting</span>
+                        <h3>Eco-Friendly Festival Gift Packs</h3>
+                        <p>Curation of organic dry fruit sets, custom diaries made of handmade paper, and eco-friendly bamboo bottles for Diwali.</p>
+                        <div class="tech-used-container">
+                            <span class="tech-tag">Eco-Friendly Gifts</span>
+                            <span class="tech-tag">Diwali Hampers</span>
+                            <span class="tech-tag">Bamboo Products</span>
+                            <span class="tech-tag">Organic Packs</span>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn-details" data-project="festival-gifting">View Details <i class="fa-solid fa-circle-info"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DYNAMIC GALLERY SECTION ================= -->
+    <section class="gallery-section section-padding" id="project-gallery" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Project Gallery</span>
+                <h2 id="gallery-title">Project Event Images</h2>
+                <p>Hover over any thumbnail below to view it in full large view. Click the image to expand fullscreen.</p>
+            </div>
+
+            <!-- Large Featured Preview Frame -->
+            <div class="gallery-featured-wrapper">
+                <div class="gallery-featured-card glass-card">
+                    <img src="" alt="Featured Event View" id="gallery-featured-img" onerror="this.src='../images/image.png';">
+                </div>
+            </div>
+            
+            <div class="gallery-row-container" id="gallery-images-row">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">&times;</button>
+            <img src="" alt="Full Screen View" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- ================= CLIENT SUCCESS STORIES ================= -->
+    <section class="success-stories-section section-padding dark-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Success Stories</span>
+                <h2>Client Impact & Case Studies</h2>
+                <p>Learn how our end-to-end B2B solutions have helped businesses scale and build robust corporate experiences.</p>
+            </div>
+
+            <div class="success-stories-grid">
+                <!-- Case Study 1 -->
+                <div class="success-story-card glass-card">
+                    <div class="story-stats">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Attendees Coordinated</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>FinVue Group Annual Summit</h3>
+                        <p class="story-quote">"IECLATE INOVATE handled our conference with absolute brilliance. The staging design was breathtaking, and our attendees were wowed from start to finish."</p>
+                        <span class="story-author">— VP of Operations, FinVue Group</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="success-story-card glass-card">
+                    <div class="story-stats">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Retention Rate</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>CogniSearch New Hire Curation</h3>
+                        <p class="story-quote">"Their automated welcome kit shipping and branding programs have streamlined our onboarding logistics and significantly boosted candidate delight."</p>
+                        <span class="story-author">— Director of HR, CogniSearch Group</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION (CTA) ================= -->
+    <section class="cta-section section-padding">
+        <div class="container">
+            <div class="cta-banner glass-card">
+                <div class="glow-orb orb-cta"></div>
+                <div class="cta-content">
+                    <h2>Ready to Elevate Your Business?</h2>
+                    <p>Partner with IECLATE INOVATE to coordinate memorable corporate events, design bespoke gift hampers, and execute premium branding and recruitment strategies.</p>
+                    <a href="schedule-meeting.html" class="btn btn-primary">
+                        Schedule Your Meeting <i class="fa-solid fa-calendar-days"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

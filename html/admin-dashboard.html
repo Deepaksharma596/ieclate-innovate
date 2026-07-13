@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Administrator operations console for IECLATE INOVATE. Manage meeting bookings, client profiles, and system settings.">
+    <title>Admin Dashboard | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="index.html" class="btn btn-secondary">Logout</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-secondary nav-cta">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= DASHBOARD HERO ================= -->
+    <section class="dashboard-hero-section">
+        <div class="glow-orb orb-dash-1"></div>
+        <div class="container dashboard-hero-content">
+            <span class="sub-title">Admin Console</span>
+            <h1>Operations <br><span class="text-gradient">Control Dashboard</span></h1>
+            <p>Welcome back, Administrator. Review pending meeting requests, manage B2B clients, and audit schedules.</p>
+        </div>
+    </section>
+
+    <!-- ================= METRICS PANEL ================= -->
+    <section class="metrics-panel-section">
+        <div class="container metrics-grid">
+            
+            <!-- Metric 1: Total -->
+            <div class="metric-card glass-card">
+                <div class="metric-icon-wrapper blue-glow">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div class="metric-details">
+                    <h3>24</h3>
+                    <p>Total Bookings</p>
+                </div>
+            </div>
+
+            <!-- Metric 2: Approved -->
+            <div class="metric-card glass-card">
+                <div class="metric-icon-wrapper green-glow">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="metric-details">
+                    <h3>12</h3>
+                    <p>Approved Sessions</p>
+                </div>
+            </div>
+
+            <!-- Metric 3: Pending -->
+            <div class="metric-card glass-card">
+                <div class="metric-icon-wrapper amber-glow">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="metric-details">
+                    <h3>8</h3>
+                    <p>Pending Review</p>
+                </div>
+            </div>
+
+            <!-- Metric 4: Rejected -->
+            <div class="metric-card glass-card">
+                <div class="metric-icon-wrapper red-glow">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="metric-details">
+                    <h3>4</h3>
+                    <p>Rejected Sessions</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= BOOKINGS TABLE BOARD ================= -->
+    <section class="bookings-board-section section-padding">
+        <div class="container">
+            <div class="board-card glass-card">
+                <div class="board-header-flex">
+                    <div class="header-left">
+                        <h3>Recent Booking Requests</h3>
+                        <p>Showing latest submissions from prospective B2B corporate partners.</p>
+                    </div>
+                    <button class="btn btn-secondary btn-refresh-table"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                </div>
+
+                <div class="table-scroll-wrapper">
+                    <table class="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Company</th>
+                                <th>Requested Date</th>
+                                <th>Meeting Time</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Request 1 -->
+                            <tr>
+                                <td>
+                                    <div class="client-cell">
+                                        <div class="avatar-circle"><i class="fa-solid fa-user"></i></div>
+                                        <div>
+                                            <span class="client-name">Alexander Wright</span>
+                                            <span class="client-role">Procurement Director</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Vertex Industries Ltd</td>
+                                <td>July 15, 2026</td>
+                                <td>11:00 AM EST</td>
+                                <td><span class="status-badge-inline status-pending">Pending Review</span></td>
+                                <td style="text-align: right;">
+                                    <a href="meeting-details.html" class="btn btn-details-link">Manage <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </td>
+                            </tr>
+
+                            <!-- Request 2 -->
+                            <tr>
+                                <td>
+                                    <div class="client-cell">
+                                        <div class="avatar-circle"><i class="fa-solid fa-user-tie"></i></div>
+                                        <div>
+                                            <span class="client-name">Sarah Jenkins</span>
+                                            <span class="client-role">VP of Operations</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>FinVue Group</td>
+                                <td>July 10, 2026</td>
+                                <td>02:30 PM EST</td>
+                                <td><span class="status-badge-inline status-approved">Approved</span></td>
+                                <td style="text-align: right;">
+                                    <a href="meeting-details.html" class="btn btn-details-link">Manage <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </td>
+                            </tr>
+
+                            <!-- Request 3 -->
+                            <tr>
+                                <td>
+                                    <div class="client-cell">
+                                        <div class="avatar-circle"><i class="fa-solid fa-user-ninja"></i></div>
+                                        <div>
+                                            <span class="client-name">Marcus Thorne</span>
+                                            <span class="client-role">Director of HR</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>CogniSearch Group</td>
+                                <td>July 08, 2026</td>
+                                <td>10:15 AM EST</td>
+                                <td><span class="status-badge-inline status-approved">Approved</span></td>
+                                <td style="text-align: right;">
+                                    <a href="meeting-details.html" class="btn btn-details-link">Manage <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </td>
+                            </tr>
+
+                            <!-- Request 4 -->
+                            <tr>
+                                <td>
+                                    <div class="client-cell">
+                                        <div class="avatar-circle"><i class="fa-solid fa-user-astronaut"></i></div>
+                                        <div>
+                                            <span class="client-name">Linda Chen</span>
+                                            <span class="client-role">Chief Talent Officer</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>OptimaSync</td>
+                                <td>July 02, 2026</td>
+                                <td>04:00 PM EST</td>
+                                <td><span class="status-badge-inline status-rejected">Rejected</span></td>
+                                <td style="text-align: right;">
+                                    <a href="meeting-details.html" class="btn btn-details-link">Manage <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

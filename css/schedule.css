@@ -1,0 +1,333 @@
+/* ==========================================================================
+   IECLATE INOVATE MEETING SCHEDULE PAGE STYLES
+   ========================================================================== */
+
+/* ================= SCHEDULE HERO ================= */
+.schedule-hero-section {
+    position: relative;
+    padding: 180px 0 80px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.schedule-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.schedule-hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+}
+
+.schedule-hero-content p {
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+.orb-sched-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--secondary);
+    top: -10%;
+    right: 25%;
+}
+
+/* ================= FORM GRID CONTAINER ================= */
+.schedule-grid-wrapper {
+    position: relative;
+    z-index: 5;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.schedule-form-card {
+    padding: 50px 45px;
+}
+
+.form-card-header {
+    margin-bottom: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-card-header h2 {
+    font-size: 1.85rem;
+    color: var(--white);
+}
+
+.form-card-header p {
+    font-size: 0.9rem;
+    color: var(--gray-muted);
+}
+
+/* Form Fields & Rows */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row-double {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.sched-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sched-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Sched Input Wrapper */
+.sched-input-wrapper {
+    display: flex;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 2px 4px;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.sched-input-wrapper:focus-within {
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.15);
+}
+
+.sched-input-wrapper i {
+    color: var(--secondary);
+    align-self: center;
+    margin-left: 15px;
+    font-size: 0.95rem;
+}
+
+.sched-input-wrapper input,
+.sched-input-wrapper select,
+.sched-input-wrapper textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    padding: 12px 15px;
+    font-size: 0.92rem;
+    flex-grow: 1;
+    font-family: inherit;
+    width: 100%;
+}
+
+.sched-input-wrapper select option {
+    background: #081B3A;
+    color: var(--white);
+}
+
+.sched-input-wrapper.select-wrapper::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-muted);
+    pointer-events: none;
+}
+
+.sched-input-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.sched-input-wrapper.textarea-wrapper {
+    align-items: flex-start;
+}
+
+.sched-input-wrapper.textarea-wrapper i {
+    margin-top: 15px;
+}
+
+.sched-input-wrapper textarea {
+    resize: none;
+}
+
+/* Custom calendar icon color adjustment */
+.sched-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: var(--transition-smooth);
+}
+
+.sched-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 0.8;
+}
+
+/* Submit Action */
+.btn-booking-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px 20px;
+}
+
+/* Form Errors */
+.sched-error-text {
+    font-size: 0.75rem;
+    color: #FF5F56;
+    display: none;
+    margin-top: 4px;
+}
+
+.sched-error-text.show {
+    display: block;
+}
+
+/* ================= GLASS SUCCESS MODAL OVERLAY ================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 17, 33, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 15px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.success-modal-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 45px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .success-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.success-icon-wrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: rgba(39, 201, 63, 0.08);
+    border: 2px solid rgba(39, 201, 63, 0.25);
+    box-shadow: 0 0 25px rgba(39, 201, 63, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.success-icon-wrapper i {
+    font-size: 2.5rem;
+    color: #27C93F;
+}
+
+.success-modal-card h2 {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.success-modal-card p {
+    font-size: 0.95rem;
+    color: var(--gray-muted);
+    line-height: 1.6;
+}
+
+.modal-notice-box {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    margin: 15px 0 10px 0;
+}
+
+.modal-notice-box p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.modal-notice-box i {
+    color: var(--secondary);
+    margin-right: 6px;
+}
+
+.btn-modal-close {
+    width: 100%;
+}
+
+/* ================= RESPONSIVE DESIGN BREAKPOINTS ================= */
+@media (max-width: 768px) {
+    .schedule-hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .schedule-form-card {
+        padding: 35px 20px;
+    }
+    
+    .form-row-double {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .success-modal-card {
+        padding: 30px 20px;
+    }
+}
+
+/* User Booked Meetings Table Styles */
+.user-meetings-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+    color: var(--white);
+    vertical-align: middle;
+}
+
+.user-meetings-table tbody tr {
+    transition: var(--transition-smooth);
+}
+
+.user-meetings-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.015);
+}

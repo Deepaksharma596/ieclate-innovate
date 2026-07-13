@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book an executive B2B consultation meeting with IECLATE INOVATE. Schedule a slot to discuss corporate events, gifting sets, or recruitment options.">
+    <title>Schedule Consultation | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/schedule.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= SCHEDULE HERO ================= -->
+    <section class="schedule-hero-section">
+        <div class="glow-orb orb-sched-1"></div>
+        <div class="container schedule-hero-content">
+            <span class="sub-title">Book A Session</span>
+            <h1>Schedule An <br><span class="text-gradient">Executive Consultation</span></h1>
+            <p>Select your required corporate service, pick a convenient date, and submit your session details. Our managers will review your slot promptly.</p>
+        </div>
+    </section>
+
+    <!-- ================= SCHEDULING FORM PANEL ================= -->
+    <section class="schedule-form-section section-padding">
+        <div class="container schedule-grid-wrapper">
+            <div class="schedule-form-card glass-card">
+                <div class="form-card-header">
+                    <h2>Meeting Details Form</h2>
+                    <p>Fields marked with * are required to process the scheduling request.</p>
+                </div>
+
+                <form id="schedule-meeting-form" class="booking-form" novalidate>
+                    <!-- Form Row 1: Name & Email -->
+                    <div class="form-row-double">
+                        <div class="sched-group">
+                            <label for="sched-name">Full Name *</label>
+                            <div class="sched-input-wrapper">
+                                <i class="fa-solid fa-signature"></i>
+                                <input type="text" id="sched-name" placeholder="John Doe" required>
+                            </div>
+                            <span class="sched-error-text" id="sched-name-err">Please enter your full name.</span>
+                        </div>
+                        <div class="sched-group">
+                            <label for="sched-email">Email Address *</label>
+                            <div class="sched-input-wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="sched-email" placeholder="john.doe@company.com" required>
+                            </div>
+                            <span class="sched-error-text" id="sched-email-err">Please enter a valid email address.</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Row 2: Phone & Company -->
+                    <div class="form-row-double">
+                        <div class="sched-group">
+                            <label for="sched-phone">Phone Number *</label>
+                            <div class="sched-input-wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="sched-phone" placeholder="+1 (555) 0199" required>
+                            </div>
+                            <span class="sched-error-text" id="sched-phone-err">Please enter your contact number.</span>
+                        </div>
+                        <div class="sched-group">
+                            <label for="sched-company">Company Name *</label>
+                            <div class="sched-input-wrapper">
+                                <i class="fa-solid fa-building"></i>
+                                <input type="text" id="sched-company" placeholder="Acme Corporation" required>
+                            </div>
+                            <span class="sched-error-text" id="sched-company-err">Please enter your company entity name.</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Row 3: Service Selection -->
+                    <div class="sched-group">
+                        <label for="sched-service">Required Corporate Service *</label>
+                        <div class="sched-input-wrapper select-wrapper">
+                            <i class="fa-solid fa-toolbox"></i>
+                            <select id="sched-service" required>
+                                <option value="" disabled selected>Select a Service Area</option>
+                                <option value="events">Event Services (Summit, Launches, Stalls)</option>
+                                <option value="gifting">Gifting Services (Kits, Festive Boxes, Merch)</option>
+                                <option value="branding">Branding & Printing (Signage, Vinyls, Flyers)</option>
+                                <option value="recruitment">Recruitment Services (Hiring, Onboarding, IT Search)</option>
+                            </select>
+                        </div>
+                        <span class="sched-error-text" id="sched-service-err">Please select a corporate service area.</span>
+                    </div>
+
+                    <!-- Form Row 4: Meeting Purpose -->
+                    <div class="sched-group">
+                        <label for="sched-purpose">Meeting Purpose *</label>
+                        <div class="sched-input-wrapper textarea-wrapper">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <textarea id="sched-purpose" rows="3" placeholder="Explain the key details or goals of the consultation..." required></textarea>
+                        </div>
+                        <span class="sched-error-text" id="sched-purpose-err">Please explain the purpose of the session.</span>
+                    </div>
+
+                    <!-- Form Row 5: Date & Time Slot -->
+                    <div class="form-row-double">
+                        <div class="sched-group">
+                            <label for="sched-date">Preferred Date *</label>
+                            <div class="sched-input-wrapper">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                <input type="date" id="sched-date" required>
+                            </div>
+                            <span class="sched-error-text" id="sched-date-err">Please select a preferred calendar date.</span>
+                        </div>
+                        <div class="sched-group">
+                            <label for="sched-time">Preferred Time Slot *</label>
+                            <div class="sched-input-wrapper select-wrapper">
+                                <i class="fa-solid fa-clock"></i>
+                                <select id="sched-time" required>
+                                    <option value="" disabled selected>Select a Time Slot</option>
+                                    <option value="morning_early">09:00 AM - 10:30 AM</option>
+                                    <option value="morning_late">11:00 AM - 12:30 PM</option>
+                                    <option value="afternoon_early">02:00 PM - 03:30 PM</option>
+                                    <option value="afternoon_late">04:00 PM - 05:30 PM</option>
+                                </select>
+                            </div>
+                            <span class="sched-error-text" id="sched-time-err">Please select a time slot.</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Row 6: Additional Notes -->
+                    <div class="sched-group">
+                        <label for="sched-notes">Additional Notes</label>
+                        <div class="sched-input-wrapper textarea-wrapper">
+                            <i class="fa-solid fa-comment-medical"></i>
+                            <textarea id="sched-notes" rows="2" placeholder="List any special requests or timeline expectations..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit action button -->
+                    <button type="submit" class="btn btn-primary btn-booking-submit">
+                        Submit Booking Request <i class="fa-solid fa-calendar-check"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= YOUR BOOKED MEETINGS SECTION ================= -->
+    <section class="user-meetings-section" style="padding-bottom: 80px;">
+        <div class="container schedule-grid-wrapper">
+            <div class="user-meetings-card glass-card" style="padding: 35px 40px; margin-top: 20px;">
+                <div class="meetings-card-header" style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px;">
+                    <h3 style="font-size: 1.35rem; color: var(--white);"><i class="fa-solid fa-calendar-days text-gradient" style="margin-right: 8px;"></i> Your Scheduled Sessions</h3>
+                    <p style="font-size: 0.85rem; color: var(--gray-muted); margin-top: 4px;">Audited list of requested B2B meeting times.</p>
+                </div>
+                
+                <!-- Displayed when no meetings are found -->
+                <div id="no-meetings-placeholder" class="no-meetings-box" style="text-align: center; padding: 30px 10px;">
+                    <i class="fa-regular fa-calendar-xmark" style="font-size: 3rem; color: var(--gray-muted); margin-bottom: 15px; display: block;"></i>
+                    <p style="font-size: 0.95rem; color: var(--white); font-weight: 500;">No Scheduled Meetings</p>
+                    <p style="font-size: 0.82rem; color: var(--gray-muted); margin-top: 4px;">Use the form above to book a consultation slot with our executive directors.</p>
+                </div>
+
+                <!-- Displayed when meetings exist -->
+                <div id="user-meetings-table-wrapper" style="display: none; overflow-x: auto; width: 100%;">
+                    <table class="user-meetings-table" style="width: 100%; border-collapse: collapse; text-align: left; min-width: 500px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px;">
+                                <th style="padding: 10px; color: var(--gray-muted); font-size: 0.78rem; font-weight: 600; text-transform: uppercase;">Service</th>
+                                <th style="padding: 10px; color: var(--gray-muted); font-size: 0.78rem; font-weight: 600; text-transform: uppercase;">Date</th>
+                                <th style="padding: 10px; color: var(--gray-muted); font-size: 0.78rem; font-weight: 600; text-transform: uppercase;">Time Slot</th>
+                                <th style="padding: 10px; color: var(--gray-muted); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-meetings-list-body">
+                            <!-- Dynamically populated in JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GLASS SUCCESS MODAL ================= -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="success-modal-card glass-card">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Booking Submitted!</h2>
+            <p>Your consultation request has been logged successfully inside our portal operations.</p>
+            <div class="modal-notice-box">
+                <p><i class="fa-solid fa-shield-halved"></i> <strong>Security Auditing Stage:</strong> Our administrator will review your requested slots, cross-reference calendar availability, and email your confirmation details with a secure Google Meet link shortly.</p>
+            </div>
+            <button class="btn btn-primary btn-modal-close" id="btn-close-modal">Return to Home</button>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>

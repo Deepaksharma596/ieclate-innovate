@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sign in to your IECLATE INOVATE portal. Access your corporate dashboard, meeting schedules, and account settings.">
+    <title>Login | IECLATE INOVATE</title>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= GLASSMORPHISM NAVBAR ================= -->
+    <header class="navbar-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <img src="../images/image.png" alt="IECLATE INOVATE Logo" id="nav-logo">
+                <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-cta"><a href="login.html" class="btn btn-secondary active">Login</a></li>
+                <li class="mobile-cta"><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary nav-cta active">Login</a>
+                <a href="register.html" class="btn btn-primary nav-cta">Register</a>
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= AUTH CONTAINER ================= -->
+    <section class="auth-viewport-section">
+        <div class="glow-orb orb-auth-1"></div>
+        <div class="glow-orb orb-auth-2"></div>
+        
+        <div class="container auth-form-container">
+            <div class="auth-card glass-card">
+                <div class="auth-header">
+                    <h2>Welcome Back</h2>
+                    <p>Access your corporate solutions dashboard and manage details.</p>
+                </div>
+
+                <form id="login-form" class="auth-form" novalidate>
+                    <!-- Error Box -->
+                    <div id="auth-error-box" class="auth-error-message-box"></div>
+
+                    <!-- Email/Username -->
+                    <div class="auth-group">
+                        <label for="login-user">Email or Username *</label>
+                        <div class="auth-input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="login-user" placeholder="alex.wright@vertex.com" required>
+                        </div>
+                        <span class="auth-error-text" id="user-error">Please enter your username or email.</span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="auth-group">
+                        <div class="label-row">
+                            <label for="login-pass">Password *</label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <div class="auth-input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="login-pass" placeholder="••••••••" required>
+                            <button type="button" class="btn-toggle-pass" id="btn-toggle-pass" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="auth-error-text" id="pass-error">Please enter your password.</span>
+                    </div>
+
+                    <!-- Remember and Submit -->
+                    <div class="auth-action-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="login-remember">
+                            <span class="checkmark"></span>
+                            Remember Me
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-auth-submit">
+                        Login <i class="fa-solid fa-right-to-bracket"></i>
+                    </button>
+
+                    <!-- Admin Portal Gateway -->
+                    <a href="admin-login.html" class="btn btn-secondary" style="width: 100%; margin-top: 10px; display: inline-flex; justify-content: center; align-items: center; gap: 8px;">
+                        Admin Portal <i class="fa-solid fa-user-shield"></i>
+                    </a>
+
+                    <!-- Alt Action link -->
+                    <div class="auth-footer-link">
+                        Don't have an account? <a href="register.html" class="highlight">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administrative Toast notification -->
+    <div class="admin-toast-notification" id="admin-toast">
+        <i class="fa-solid fa-circle-info toast-icon" id="toast-icon"></i>
+        <span class="toast-message" id="toast-message">Notification Message</span>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="../images/image.png" alt="IECLATE INOVATE Logo">
+                    <span class="logo-text">IECLATE <span class="highlight">INOVATE</span></span>
+                </a>
+                <p class="brand-desc">
+                    Engineered to design, produce, and manage premium corporate events, gifts, print branding, and staffing solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#event-services">Event Services</a></li>
+                    <li><a href="services.html#gifting-services">Gifting Services</a></li>
+                    <li><a href="services.html#branding-printing">Branding & Printing</a></li>
+                    <li><a href="services.html#recruitment-services">Recruitment Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> 101 Innovation Boulevard, Tech Park</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ieclateinovate.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IECLATE INOVATE. All Rights Reserved. Powered by Clean Modern Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../javascript/main.js"></script>
+</body>
+
+</html>
