@@ -112,8 +112,3 @@ exports.sendAdminContactNotification = async (adminEmail, contact) => {
   `);
   await sendMail(adminEmail, "New Contact Enquiry", html);
 };
-
-path = Path("/mnt/data/emailService.js")
-path.write_text(content, encoding="utf-8")
-
-print(path)
