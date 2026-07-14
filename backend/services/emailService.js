@@ -1,16 +1,3 @@
-from pathlib import Path
-
-content = r'''// NOTE:
-// This file is a template/skeleton for migrating from Nodemailer to Resend.
-// Replace your existing emailService.js with this version and copy your
-// existing HTML templates into the marked sections.
-//
-// Install:
-//   npm install resend
-//
-// Environment variable required:
-//   RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
-
 const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
