@@ -3,16 +3,12 @@ const nodemailer = require('nodemailer');
 // Initialize Nodemailer SMTP transporter
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
-    secure: false,
-    requireTLS: true,
+    port: parseInt(process.env.EMAIL_PORT) || 587,
+    secure: false, // true for 465, false for other ports
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    },
-    connectionTimeout: 90000,
-    greetingTimeout: 90000,
-    socketTimeout: 90000
+    }
 });
 
 transporter.verify(function (error, success) {
@@ -68,7 +64,7 @@ const baseEmailTemplate = (title, bodyContent) => `
 const sendMail = async (to, subject, html) => {
     try {
         const info = await transporter.sendMail({
-            from: `"IECLATE INOVATE" <ieclateinnovate@gmail.com>`,
+            from: `"IECLATE INOVATE" <${process.env.EMAIL_USER}>`,
             to,
             subject,
             html
