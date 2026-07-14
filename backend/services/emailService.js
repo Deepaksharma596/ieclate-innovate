@@ -25,7 +25,7 @@ ${bodyContent}
 async function sendMail(to, subject, html) {
   try {
     const result = await resend.emails.send({
-      from: "IECLATE INOVATE <onboarding@resend.dev>", // replace with your verified domain later
+      from: "IECLATE INOVATE <noreply@ieclateinovate.com>", // replace with your verified domain later
       to,
       subject,
       html,
